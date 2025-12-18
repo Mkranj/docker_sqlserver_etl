@@ -1,4 +1,5 @@
 import pyodbc
+import os
 
 # We are not guaranteed to run ETL AFTER the db is created.
 # So we connect to master db first
@@ -8,7 +9,8 @@ conn = pyodbc.connect(
     "SERVER=sqlserver;"
     "DATABASE=master;"
     "UID=sa;"
-    "PWD=Vjezbe123!;"
+    "PWD=" + os.environ.get("SA_PASSWORD") + ";"
+    "Encrypt=yes;"
     "TrustServerCertificate=yes;"
 )
 
