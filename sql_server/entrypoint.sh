@@ -23,7 +23,7 @@ sleep 20
 # Signal readiness
 touch /var/opt/mssql/.initialized
 
-echo "Initialization complete, /mssql/.initialized created."
+echo "SQL Server initialization complete! /mssql/.initialized file created."
 
 # Bring SQL Server back to foreground
 wait
