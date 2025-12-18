@@ -3,8 +3,7 @@ import os
 
 print("ETL start")
 
-# We are not guaranteed to run ETL AFTER the db is created.
-# So we connect to master db first
+# We connect to the master database first to establish a connection.
 
 conn = pyodbc.connect(
     "DRIVER={ODBC Driver 18 for SQL Server};"
@@ -17,10 +16,11 @@ conn = pyodbc.connect(
 )
 
 cursor = conn.cursor()
-# Using the test_init db
+
+# Use the test_init db
 cursor.execute("USE test_init")
 
-# Example ETL: add a row
+# Example ETL: add a row to the table created during SQL Server initialization
 cursor.execute("""
 INSERT INTO fTest (LastName, FirstName)
 VALUES ('TestLast', 'TestFirst')
