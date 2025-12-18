@@ -1,6 +1,8 @@
 import pyodbc
 import os
 
+print("ETL start")
+
 # We are not guaranteed to run ETL AFTER the db is created.
 # So we connect to master db first
 

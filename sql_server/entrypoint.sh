@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# early exit on any error
+# Early exit on any error
 set -e
-
-# If the "success" file exists in saved volume, remove it for now
-rm -f /var/opt/mssql/.initialized
 
 # Start SQL Server in background
 /opt/mssql/bin/sqlservr &
