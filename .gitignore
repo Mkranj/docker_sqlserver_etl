@@ -1,0 +1,2 @@
+etl/data/**
+!etl/data/example.log
